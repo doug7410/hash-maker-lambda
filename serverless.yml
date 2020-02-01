@@ -1,0 +1,32 @@
+service: purchases
+
+provider:
+    name: aws
+    region: us-east-1
+    runtime: provided
+    iamRoleStatements:
+        - Effect: Allow
+          Action:
+              - lambda:InvokeFunction
+              - lambda:InvokeAsync
+          Resource: "*"
+
+plugins:
+    - ./vendor/bref/bref
+
+functions:
+    create-update-sql:
+        handler: create_sql.php
+        description: 'Create SQL'
+        layers:
+            - ${bref:layer.php-73}
+        timeout: 18
+        memorySize: 1024
+    run-update-sql:
+        handler: run_sql.php
+        description: 'Run SQL'
+        layers:
+            - ${bref:layer.php-73}
+        timeout: 18
+        memorySize: 1024
+

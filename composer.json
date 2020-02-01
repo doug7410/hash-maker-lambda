@@ -1,0 +1,16 @@
+{
+    "name": "dougsteinberg/bref-simple",
+    "require": {
+        "bref/bref": "^0.5.11",
+        "nesbot/carbon": "^2.27",
+        "aws/aws-sdk-php": "^3.123",
+        "monolog/monolog": "^2.0",
+        "bref/logger": "^1.0",
+        "vlucas/phpdotenv": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    }
+}
